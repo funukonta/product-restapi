@@ -21,7 +21,6 @@ func connectDb() {
 	ssl := "disable"
 
 	connStr := fmt.Sprintf("postgresql://%s:%s@%s/%s?sslmode=%s", user, password, host, dbname, ssl)
-	// connStr := "postgresql://postgres:productDB@localhost/postgres?sslmode=disable"
 
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {

@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    container_name: some-postgres
+    environment:
+      POSTGRES_PASSWORD: productDB
+    networks:
+      - network_product
+
+  product-restapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: productrestapi
+    ports:
+      - "8080:8080"
+    networks:
+      - network_product
+    depends_on:
+      - postgres
+
+networks:
+  network_product:
+    driver: bridge

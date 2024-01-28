@@ -12,11 +12,8 @@ COPY . .
 # Run 'go mod tidy' to clean up the module file
 RUN go mod tidy
 
-# Build the Go application
-RUN go build -o binary
+# Build and run the Go application
+CMD ["go", "run", "main.go"]
 
 # Expose port 8080 (the port your application will run on)
 EXPOSE 8080
-
-# Set the entry point for the container
-ENTRYPOINT ["/app/binary"]
