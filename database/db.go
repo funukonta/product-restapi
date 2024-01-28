@@ -52,12 +52,24 @@ func createTables() {
 	if err != nil {
 		log.Panicln("error create table", err.Error())
 	}
+}
 
-	db.Exec("update table set aproval2;=$2 where")
+func mockData() {
+	query := `
+	INSERT INTO products (name,price,description,quantity)
+	values 
+	('botol gaming',20000,'botol gaming ciamik', 5),
+	('standing desk',700000,'meja bisa berdiri', 3)
+	`
+	_, err := db.Exec(query)
+	if err != nil {
+		log.Panicln("error insert mock data", err.Error())
+	}
 }
 
 func NewPG() *sql.DB {
 	connectDb()
 	createTables()
+	mockData()
 	return db
 }
