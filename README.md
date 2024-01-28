@@ -11,10 +11,10 @@ Saya mennggunakan pendekatan Domain-Driven Design (DDD) dalam mengembangkan Proj
 ## How To Set Up:
  1. Clone the Repo `git clone https://github.com/funukonta/product-restapi`
  2. Create Docker Network `docker network create network_product`
- 2. Download docker images for postgresDb `docker run --name some-postgres -e POSTGRES_PASSWORD=productDB -p 5432:5432 --network network_product -d postgres` 
- 3. Build docker image from Dockerfile `docker build -t product-restapi .`
- 4. Run the API Server `docker run --name productrestapi -d -p 8080:8080 --network network_product product-restapi`
- 5. Server ready to serve
+ 3. Download docker images for postgresDb `docker run --name some-postgres -e POSTGRES_PASSWORD=productDB -p 5432:5432 --network network_product -d postgres` 
+ 4. Build docker image from Dockerfile `docker build -t product-restapi .`
+ 5. Run the API Server `docker run --name productrestapi -d -p 8080:8080 --network network_product product-restapi`
+ 6. Server ready to serve
 
 ## End Points
 1. `/product`
