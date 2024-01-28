@@ -5,6 +5,9 @@ Project Test Erajaya - Product Rest API
 - mux
 - pq
 
+## Architecture:
+Saya mennggunakan pendekatan Domain-Driven Design (DDD) dalam mengembangkan Project ini.
+
 ## How To Set Up:
  1. Clone the Repo `git clone https://github.com/funukonta/product-restapi`
  2. Create Docker Network `docker network create network_product`
